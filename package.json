@@ -1,0 +1,41 @@
+{
+  "name": "lattice",
+  "version": "1.0.0",
+  "description": "Web app for finding information about favorite movies using the The Movie Database API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "build": "webpack",
+    "dev-start": "webpack --watch & nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/housker/lattice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/housker/lattice/issues"
+  },
+  "homepage": "https://github.com/housker/lattice#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "dotenv": "^7.0.0",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.22.1",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  }
+}
