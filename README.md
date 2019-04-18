@@ -7,9 +7,12 @@ Web app for finding information about favorite movies using the The Movie Databa
 Create a .env file in the root directory and add the following keys:
 PORT=####
 KEY=####
+R_PORT=####
+R_HOST=####
+R_password=####
 
 Run for development:
-In the root directory, run npm install. Next run npm run dev-start. In your browser, navigate to the port displayed in the console, i.e. localhost:####
+From the command line in the root directory, run npm install. In a seperate window, execute redis-server to start the cache server. Next run npm run dev-start. In your browser, navigate to the port displayed in the console, i.e. localhost:####
 
 
 Please include a README.md with step-by-step instructions for running the app. Be careful to ensure there are not local dependencies that have been overlooked in the readme.
