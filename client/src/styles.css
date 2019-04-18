@@ -52,6 +52,16 @@ a {
     margin: 10px;
 }
 
+.genres {
+    margin: 15px;
+    position: fixed;
+    float: left;
+}
+
+.genres > select {
+    font-size: 16px;
+}
+
 /* Movie Details */
 
 .wrapper {

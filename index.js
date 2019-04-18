@@ -25,6 +25,22 @@ var checkCache = (req, res, next) => {
 
 app.use(express.static(`${__dirname}/client/dist`));
 
+app.get('/genres', (req, res, next) => {
+    client.get('genres', (err,value) => {
+        if(err || value === null || value === undefined) {
+            axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.KEY}&language=en-US`)
+            .then(r => {
+                client.set('genres',JSON.stringify(r.data.genres), err => { if(err) console.error(err) });
+                res.end(JSON.stringify(r.data.genres));
+            })
+            .catch(err => console.error(err));  
+        } else {
+            console.log('GRABBING FROM CACHE')
+            res.end(value);
+        }
+    });
+});
+
 app.get('movie/:id', (req, res, next) => {
     res.end(`${__dirname}/client/dist`);
 })
