@@ -17,7 +17,7 @@ class Thumbnail extends React.Component {
         return (
             <div id='thumbnail'>
                 <Link to={`/movie/${this.props.id}`}>
-                { this.props.poster && <img src={`https://image.tmdb.org/t/p/w500/${this.props.poster}`} width='100%'></img> }
+                    { this.props.poster && <img src={`https://image.tmdb.org/t/p/w500/${this.props.poster}`} width='100%'></img> }
                 <div id='caption'>{ this.props.title }</div>
                 </Link>
             </div>

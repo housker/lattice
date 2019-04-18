@@ -8,6 +8,8 @@
     color: gray;
 }
 
+/* Home */
+
 #loading {
     margin: 30vh 30vw;
 }
@@ -50,6 +52,8 @@ a {
     margin: 10px;
 }
 
+/* Movie Details */
+
 .wrapper {
     background-color: rgba(0, 0, 0, 0.9);
 }
@@ -64,6 +68,18 @@ a {
 
 .container > * {
     margin: 30px;
+}
+
+.related {
+    position: absolute;
+    width: 100vw;
+    margin: 5px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.related > span{
+    margin: 0 10px;
 }
 
 .title {
@@ -98,11 +114,10 @@ ul {
     flex-wrap: wrap;
     list-style-type: none;
     margin: 3px;
-    /* overflow: hidden; */
 }
 
 li {
-    width: 25vw;
+    width: 50%;
     line-height: 1.5;
 }
 
@@ -117,10 +132,10 @@ li {
 }
 
 .tooltip-bubble {
-    /* min-width: 120px; */
-    /* max-width: 210px; */
+    min-width: 120px;
+    max-width: 210px;
     position: absolute;
-    z-index: 100;
+    z-index: 10;
 }
 .tooltip-bubble::after {
     content: '';
@@ -148,4 +163,4 @@ li {
     line-height: 1.4;
     padding: .75em;
     text-align: center;
-  }
+}

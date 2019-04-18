@@ -7,37 +7,44 @@ const PORT = process.env.PORT;
 app.use(express.static(`${__dirname}/client/dist`));
 
 app.get('movie/:id', (req, res, next) => {
-    res.end(`${__dirname}/client/dist`)
-    // axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.KEY}&language=en-US&page=1`)
-    // .then(r => res.end(JSON.stringify(r.data.results)))
-    // // .then(jres => console.log(jres))
-    // .catch(err => console.error(err));
+    res.end(`${__dirname}/client/dist`);
 })
 
 app.get('/popular', (req, res, next) => {
     axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.KEY}&language=en-US&page=1`)
     .then(r => res.end(JSON.stringify(r.data.results)))
-    // .then(jres => console.log(jres))
     .catch(err => console.error(err));
 })
 
 app.get('/query/:q', (req, res, next) => {
-    // console.log(req.params.q)
     axios.get(`https://api.themoviedb.org/3/search/movie?query=${req.params.q}&api_key=${process.env.KEY}&language=en-US&page=1&include_adult=false`)
     .then(r => res.end(JSON.stringify(r.data.results)))
-    // .then(r => console.log(r.data))
     .catch(err => console.error(err));
 })
 
 app.get('/details/:id', (req, res, next) => {
-    const overview = axios.get(`https://api.themoviedb.org/3/movie/${req.params.id}?api_key=${process.env.KEY}&language=en-US`)
-    // .then(r => res.end(JSON.stringify(r.data)))
-    // .then(r => data = r.data)
-    // .then(r => console.log(r.data))
-    .catch(err => console.error(err));
+    var data = { data: {}};
+    const overview = new Promise((resolve, reject) => {
+        axios.get(`https://api.themoviedb.org/3/movie/${req.params.id}?api_key=${process.env.KEY}&language=en-US`)
+        // .then(r => res.end(JSON.stringify(r.data)))
+        .then(r => {
+            data.data = r.data;
+            if (r.data.belongs_to_collection) {
+                axios.get(`https://api.themoviedb.org/3/collection/${r.data.belongs_to_collection.id}?api_key=${process.env.KEY}&language=en-US`)
+                .then(r => {
+                    data.data.belongs_to_collection.parts = r.data.parts;
+                    resolve(data);
+                })
+                .catch(err => reject(err));
+            } else {
+                resolve(data);
+            }
+        })
+        .catch(err => reject(err));
+    }) 
+
 
     const cast = axios.get(`https://api.themoviedb.org/3/movie/${req.params.id}/credits?api_key=${process.env.KEY}&language=en-US`)
-    // .then(r => res.end(JSON.stringify(r.data)))
     // .then(r => res.end(JSON.stringify(r.data)))
     // .then(r => console.log(r.data))
     .catch(err => console.error(err));
