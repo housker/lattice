@@ -4,6 +4,14 @@ Web app for finding information about favorite movies using the The Movie Databa
 
 ## Getting Started
 
+Create a .env file in the root directory and add the following keys:
+PORT=####
+KEY=####
+
+Run for development:
+In the root directory, run npm install. Next run npm run dev-start. In your browser, navigate to the port displayed in the console, i.e. localhost:####
+
+
 Please include a README.md with step-by-step instructions for running the app. Be careful to ensure there are not local dependencies that have been overlooked in the readme.
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
