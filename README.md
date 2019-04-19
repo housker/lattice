@@ -12,7 +12,19 @@ R_HOST=####
 R_password=####
 
 Run for development:
-From the command line in the root directory, run npm install. In a seperate window, execute redis-server to start the cache server. Next run npm run dev-start. In your browser, navigate to the port displayed in the console, i.e. localhost:####
+From the command line in the root directory:
+```
+npm install
+```
+In a seperate window:
+```
+redis-server
+```
+Next run 
+```
+NODE_ENV=dev npm run dev-start
+```
+In your browser, navigate to the port displayed in the console, i.e. localhost:####
 
 
 Please include a README.md with step-by-step instructions for running the app. Be careful to ensure there are not local dependencies that have been overlooked in the readme.
