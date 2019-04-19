@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
-// import { Grid, Button, Segment, Input, Menu, Card, Form } from 'semantic-ui-react';
 import style from './styles.css';
 import Movie from './Movie.jsx';
 import Home from './Home.jsx';

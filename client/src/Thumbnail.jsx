@@ -1,8 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-// import { Grid, Button, Segment, Input, Menu, Card, Form } from 'semantic-ui-react';
-import style from './styles.css';
-import Movie from './Movie.jsx';
+import { Link } from "react-router-dom";
 
 class Thumbnail extends React.Component {
     constructor(props) {

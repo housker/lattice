@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import style from './styles.css';
 import Tooltip from './Tooltip.jsx';
 
 
@@ -32,12 +31,18 @@ class Movie extends React.Component {
 
     render(id) {
         const movie = this.state.movie
-        console.log(movie)
         return (
             <div className="wrapper">
                 { movie &&
                 <div>
-                    { movie.belongs_to_collection && <div className="related"><span>Related:</span>{ movie.belongs_to_collection.parts.map((part, i) => <span key={i}><Link to={`/movie/${part.id}`}>{ part.title }</Link></span>)}</div> }
+                    { movie.belongs_to_collection && 
+                    <div className="related">
+                        <span>Related:</span>
+                        { movie.belongs_to_collection.parts.map((part, i) => 
+                        <span key={i}>
+                            <Link to={`/movie/${part.id}`}>{ part.title }</Link>
+                        </span>)}
+                    </div> }
                     <div className="container">
                         <div className="left">
                             <a href={movie.homepage}><img id="poster" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}></img></a>

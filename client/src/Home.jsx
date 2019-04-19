@@ -1,5 +1,4 @@
 import React from 'react';
-import style from './styles.css';
 import Thumbnail from './Thumbnail.jsx';
 
 class Home extends React.Component {

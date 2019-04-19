@@ -47,23 +47,14 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+If you do not have mocha installed, run npm install mocha -g.
+Stop the app's server if it is currently running, and start the redis server.
+Run npm test
 
 ### And coding style tests
 
-Explain what these tests test and why
-
-```
-Give an example
-```
+To run style linter execute
+./node_modules/.bin/eslint yourfile.js
 
 ## Deployment
 
