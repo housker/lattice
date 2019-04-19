@@ -1,6 +1,6 @@
 # Lattice Take Home Exercise
 
-[Web app](https://lattice-take-home.herokuapp.com)for finding information about favorite movies using the The Movie Database API.
+[Web app](https://lattice-take-home.herokuapp.com) for finding information about favorite movies using the The Movie Database API.
 
 ## Getting Started
 
@@ -10,7 +10,7 @@
 - [Redis](https://redis.io/) >= 5.0.3
 - [Mocha](https://mochajs.org/) >= 6.1.4
 
-Sign up or login to [The Movie Database](https://www.themoviedb.org/account/) to access API key.
+Sign up or log in to [The Movie Database](https://www.themoviedb.org/account/) to access API key.
 
 ### Installing
 
